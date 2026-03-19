@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 330 100% 98%;
+    --foreground: 331 34% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 331 34% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 331 34% 18%;
+
+    --primary: 334 82% 64%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 288 57% 93%;
+    --secondary-foreground: 318 31% 28%;
+
+    --muted: 322 46% 95%;
+    --muted-foreground: 326 18% 44%;
+
+    --accent: 272 71% 82%;
+    --accent-foreground: 318 31% 24%;
+
+    --destructive: 0 76% 61%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 326 41% 86%;
+    --input: 326 41% 86%;
+    --ring: 334 82% 64%;
+
+    --radius: 1.5rem;
+
+    --sidebar-background: 330 100% 98%;
+    --sidebar-foreground: 331 34% 18%;
+    --sidebar-primary: 334 82% 64%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 288 57% 93%;
+    --sidebar-accent-foreground: 318 31% 24%;
+    --sidebar-border: 326 41% 86%;
+    --sidebar-ring: 334 82% 64%;
+
+    --shadow-romantic: 0 24px 80px -28px hsl(var(--primary) / 0.45);
+  }
+
+  .dark {
+    --background: 318 28% 10%;
+    --foreground: 334 53% 95%;
+
+    --card: 318 27% 14%;
+    --card-foreground: 334 53% 95%;
+
+    --popover: 318 27% 14%;
+    --popover-foreground: 334 53% 95%;
+
+    --primary: 334 82% 68%;
+    --primary-foreground: 318 28% 10%;
+
+    --secondary: 285 30% 20%;
+    --secondary-foreground: 334 53% 95%;
+
+    --muted: 300 19% 18%;
+    --muted-foreground: 327 28% 72%;
+
+    --accent: 274 49% 57%;
+    --accent-foreground: 334 53% 95%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 310 23% 24%;
+    --input: 310 23% 24%;
+    --ring: 334 82% 68%;
+    --sidebar-background: 318 28% 10%;
+    --sidebar-foreground: 334 53% 95%;
+    --sidebar-primary: 334 82% 68%;
+    --sidebar-primary-foreground: 318 28% 10%;
+    --sidebar-accent: 285 30% 20%;
+    --sidebar-accent-foreground: 334 53% 95%;
+    --sidebar-border: 310 23% 24%;
+    --sidebar-ring: 334 82% 68%;
+
+    --shadow-romantic: 0 24px 80px -30px hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--primary) / 0.22), transparent 34%),
+      radial-gradient(circle at top right, hsl(var(--accent) / 0.18), transparent 32%),
+      linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary) / 0.72));
+    background-attachment: fixed;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  .romantic-page {
+    background:
+      radial-gradient(circle at 15% 20%, hsl(var(--primary) / 0.14), transparent 26%),
+      radial-gradient(circle at 85% 18%, hsl(var(--accent) / 0.16), transparent 22%),
+      radial-gradient(circle at 50% 100%, hsl(var(--secondary) / 0.5), transparent 28%);
+  }
+
+  .glass-panel {
+    background: linear-gradient(145deg, hsl(var(--card) / 0.58), hsl(var(--card) / 0.34));
+    backdrop-filter: blur(26px);
+    box-shadow: var(--shadow-romantic);
+  }
+
+  .soft-panel {
+    background: linear-gradient(160deg, hsl(var(--card) / 0.74), hsl(var(--secondary) / 0.36));
+    backdrop-filter: blur(18px);
+  }
+
+  .romantic-shadow {
+    box-shadow: var(--shadow-romantic);
+  }
+
+  .romantic-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(20px);
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  .romantic-orb-1 {
+    left: -4rem;
+    top: 3rem;
+    height: 16rem;
+    width: 16rem;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.34), transparent 70%);
+  }
+
+  .romantic-orb-2 {
+    right: -5rem;
+    top: 20%;
+    height: 18rem;
+    width: 18rem;
+    background: radial-gradient(circle, hsl(var(--accent) / 0.3), transparent 72%);
+  }
+
+  .romantic-orb-3 {
+    bottom: -5rem;
+    left: 50%;
+    height: 18rem;
+    width: 18rem;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, hsl(var(--secondary-foreground) / 0.15), transparent 72%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
