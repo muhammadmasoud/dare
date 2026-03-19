@@ -45,11 +45,11 @@ const HomeController = () => {
   const musicSrc = useMemo(() => {
     switch (musicScene) {
       case "valentine":
-        return "/src/assets/Aylex-Italy.mp3";
+        return "/audio/Aylex-Italy.mp3";
       case "stop":
-        return "/src/assets/Clowns.mp3";
+        return "/audio/Clowns.mp3";
       case "goodgirl":
-        return "/src/assets/faster.mp3";
+        return "/audio/faster.mp3";
     }
   }, [musicScene]);
 
